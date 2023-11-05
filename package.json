@@ -1,17 +1,15 @@
 {
   "name": "tempprod",
   "version": "1.0.0",
-  "description": "The **Production Build** project is a web application consisting of a back-end server and a front-end client. This README provides information about the project's structure and how to get started.",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d",
-    "generate-toc": "markdown-toc -i readme.md",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "npm run start:server",
+    "start:server": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:server": "cd backend && npm run build"
   },
   "keywords": [],
   "author": "",
